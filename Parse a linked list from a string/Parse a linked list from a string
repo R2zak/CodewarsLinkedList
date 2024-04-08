@@ -1,0 +1,13 @@
+def linked_list_from_string(s):
+    lst=s.split(" -> ")
+    lst=lst[:-1]
+    link=False
+    for i in lst[::-1]:
+        if link==False:
+            new=Node(int(i))
+        else:
+            new=Node(int(i),link)
+        link=new
+    if not lst:
+        return None
+    return new
