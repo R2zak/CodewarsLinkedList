@@ -1,0 +1,10 @@
+from preloaded import Node
+
+def swap_pairs(head):
+    if head==None or head.next==None:
+        return head
+    nt=head.next
+    head.next=nt.next
+    nt.next=head
+    head.next=swap_pairs(head.next)
+    return nt
